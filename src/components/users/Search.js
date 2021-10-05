@@ -12,9 +12,10 @@ const Search = () => {
 		e.preventDefault();
 		if (text === "") {
 			alertContext.setAlert("Please enter something", "light");
+		} else {
+			githubContext.searchUsers(text);
+			setText("");
 		}
-		githubContext.searchUsers(text);
-		setText("");
 	};
 
 	const onChange = (e) => setText(e.target.value);
